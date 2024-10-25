@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.MuiMenuItem-root.Mui-selected,
+.MuiPickersDay-root.Mui-selected,
+.MuiPickersYear-yearButton.Mui-selected,
+.MuiPickersDay-root:active {
+  background-color: green !important;
+  color: white !important;
+}
+.MuiPickersYear-yearButton {
+  text-align: center;
+}
+.MuiButton-root {
+  color: green !important;
+}
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+  body {
+    @apply text-16 font-montserrat;
+  }
+  input {
+    @apply bg-transparent outline-none;
+  }
+  button {
+    @apply text-start;
+  }
+  h2,
+  .title {
+    @apply text-[32px] leading-[41px] font-bold font-montserrat text-[#333];
+  }
+  .title-3 {
+    @apply text-18 text-[#333] leading-[23px] font-bold font-montserrat;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-[8px];
+  }
+  ::-webkit-scrollbar {
+    @apply w-[10px];
+  }
+  .scroll-small::-webkit-scrollbar {
+    @apply w-[5px];
+  }
+  input[type="range"] {
+    @apply appearance-none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @apply rounded-circle w-[12px] h-[12px] bg-green appearance-none;
+  }
+
+  .App {
+    @apply overflow-hidden;
+  }
+  .trans-def {
+    transition: 0.1s ease-in all;
+  }
+  .scroll-hidden::-webkit-scrollbar {
+    @apply w-0;
+  }
+
+  @keyframes open-modal-wrapper {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes open-burger {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  @keyframes open-filter {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+}
+@layer components {
+  .container {
+    @apply px-[16px] max-w-[1177px] mx-auto;
+  }
+  .container-two {
+    @apply px-[16px] max-w-[1302px] mx-auto;
+  }
+  .box-secondary {
+    @apply rounded-[100px] border px-[24px] py-[16px] font-medium;
+  }
+  .box-input {
+    @apply rounded-[24px] border border-[rgba(221,221,223,1)] px-[16px] py-[12px] w-full text-[rgba(51,51,51,1)] font-mulish trans-def focus:border-green;
+  }
+  .box-btn {
+    @apply rounded-[24px] border-2 border-green py-10 px-[47px] text-green font-bold leading-[20px] font-montserrat cursor-pointer;
+  }
+  .btn {
+    @apply rounded-[30px] bg-green py-[16px] px-[49px] text-white font-bold font-montserrat text-center trans-def hover:brightness-75 active:brightness-105 disabled:pointer-events-none disabled:bg-[rgba(203,203,203,1)] disabled:text-[rgba(129,129,129,1)];
+  }
+}
+/* Add this to your CSS file */
+.show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .show-on-mobile {
+    display: inline-block;
+  }
+}
+.swiper-button-prev, .swiper-button-next {
+  color: #000; /* Change this to your desired color */
+  background: rgba(255, 255, 255, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev {
+  left: -20px;
+}
+
+.swiper-button-next {
+  right: -20px;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-size: 18px;
+}
